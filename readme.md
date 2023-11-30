@@ -7,3 +7,4 @@ PROBLEMA:
 6.1 - ? il numero generato non è presente nell'array;
     7 - Inseriamo il numero nell'array;
 6.2 - : continuiamo a generare numeri;
+8 - Aggiungere livelli al gioco;
