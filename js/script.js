@@ -1,12 +1,12 @@
 // Punto 3 readme.md
 // Funzione in cui determiniamo un array vuoto
-function createBombs(){
+function createBombs(number_of_bombs,cells){
     let array = [];
 
     // Punto 7 readme.md
     // Inserisco all'interno dell'array i numeri che ho generato casualmente
-    for(let i=0; i<100; i++){
-        array.push(createRandomNumbers(array));
+    for(let i=0; i<number_of_bombs; i++){
+        array.push(createRandomNumbers(array,cells));
     }
     
     return array;
@@ -14,13 +14,13 @@ function createBombs(){
 
 // Punto 4 readme.md
 // Funzione che mi genera numeri random
-function createRandomNumbers(arrayNumbers){
+function createRandomNumbers(arrayNumbers,cells){
     let flag = false;
     let number;
     
     // Punto 5 readme.md
     while(flag == false){
-        number = Math.floor(Math.random() * 100 + 1);
+        number = Math.floor(Math.random() * cells + 1);
 
         // Punto 6 readme.md
         if(arrayNumbers.includes(number) == false){
@@ -63,6 +63,9 @@ function createGrid(){
     let column;
     let row;
 
+    // Determino il numero di bombe presenti all'interno del gioco
+    const NUMBER_OF_BOMBS = 16;
+
     // Punto 8 readme.md
     // Determino la grandezza della griglia a seconda della modalità di gioco
     switch(level){
@@ -84,8 +87,21 @@ function createGrid(){
     for (let i=1; i<=column; i++){
         let square = createCells(i,row);
         
+        // Punto 10 readme.md
+        // Cambio colore alla casella a seconda del gioco
         square.addEventListener('click', function(){
-            this.classList.toggle('square-blue');
+
+            // Punto 11 readme.md
+            // La casella non contiene la bomba quindi continuo il gioco
+            if(createBombs(NUMBER_OF_BOMBS,column).includes(i) == false){
+                this.classList.add('square-blue');
+
+            }
+
+            // La casella contiene la bomba quindi il gioco termina
+            else{
+                this.classList.add('bg-danger');
+            }
         })        
         
         grid.appendChild(square);

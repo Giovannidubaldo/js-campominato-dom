@@ -8,3 +8,7 @@ PROBLEMA:
     7 - Inseriamo il numero nell'array;
 6.2 - : continuiamo a generare numeri;
 8 - Aggiungere livelli al gioco;
+9 - Aggiungere una funzione al cliccare di una casella;
+10.1 - ? il numero della casella non è incluso nell'array di bombe;
+    11 - la casella diventa azzurra e il punteggio incrementa;
+10.2 - : la casella diventa rossa e il gioco termina;
