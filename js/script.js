@@ -84,6 +84,9 @@ function createGrid(){
 
     row = Math.sqrt(column);
 
+    // Richiamo la funzione per la creazione delle bombe
+    const bombs = createBombs(NUMBER_OF_BOMBS,column);
+
     for (let i=1; i<=column; i++){
         let square = createCells(i,row);
         
@@ -93,7 +96,7 @@ function createGrid(){
 
             // Punto 11 readme.md
             // La casella non contiene la bomba quindi continuo il gioco
-            if(createBombs(NUMBER_OF_BOMBS,column).includes(i) == false){
+            if(bombs.includes(i) == false){
                 this.classList.add('square-blue');
 
             }
