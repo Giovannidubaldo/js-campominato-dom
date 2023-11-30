@@ -38,6 +38,10 @@ function createCells(num, cell_row){
     let cell = document.createElement('div');
     cell.classList.add('square')
 
+    // Determino la grandezza delle celle
+    cell.style.width = `calc(100% / ${cell_row})`;
+    cell.style.height = cell.style.width;
+
     cell.innerHTML = num;
 
     return cell;
@@ -77,12 +81,11 @@ function createGrid(){
 
     row = Math.sqrt(column);
 
-    for (let i=0; i<=column; i++){
+    for (let i=1; i<=column; i++){
         let square = createCells(i,row);
         
         square.addEventListener('click', function(){
             this.classList.toggle('square-blue');
-            console.log(this.innerText);
         })        
         
         grid.appendChild(square);
