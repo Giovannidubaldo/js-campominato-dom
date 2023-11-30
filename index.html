@@ -11,7 +11,38 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    
+    <main class="my-4">
+        <!-- Punto 1 readme.md -->
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center text-light">Campo Minato</h1>
+                <div class="col-12">
+
+                    <!-- Select per la difficoltà del gioco -->
+                    <div class="d-flex justify-content-center mt-4">
+                        <select name="modality" id="modality" class="form-control w-50">
+                            <option value="">Seleziona la modalità di gioco</option>
+                            <option value="1">Principiante</option>
+                            <option value="2">Equilibrato</option>
+                            <option value="3">Professionista</option>
+                        </select>
+
+                        <!-- Button per avviare il gioco -->
+                        <button id="button" class="btn btn-sm btn-light ms-2">Gioca</button>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <h3 class="text-center text-light mt-4" id="score"></h3>
+
+                    <!-- Griglia del gioco -->
+                    <div class="d-flex justify-content-center mt-4">
+                        <div id="grid" class="d-flex flex-wrap justify-content-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <!-- Link js -->
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
