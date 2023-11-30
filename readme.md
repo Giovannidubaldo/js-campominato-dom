@@ -12,3 +12,5 @@ PROBLEMA:
 10.1 - ? il numero della casella non è incluso nell'array di bombe;
     11 - la casella diventa azzurra e il punteggio incrementa;
 10.2 - : la casella diventa rossa e il gioco termina;
+12 - recuperare un elemento in html per determinare il punteggio;
+13 - bloccare il gioco una volta capitata la bomba;

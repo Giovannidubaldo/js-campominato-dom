@@ -63,8 +63,9 @@ function createGrid(){
     let column;
     let row;
 
-    // Dichiaro la variabile per determinare il punteggio
+    // Dichiaro la variabile per determinare il punteggio e per bloccare il gioco
     let points = 0;
+    let gameOver = false;
 
     // Determino il numero di bombe presenti all'interno del gioco
     const NUMBER_OF_BOMBS = 16;
@@ -97,18 +98,24 @@ function createGrid(){
         // Cambio colore alla casella a seconda del gioco
         square.addEventListener('click', function(){
 
-            // Punto 11 readme.md
-            // La casella non contiene la bomba quindi continuo il gioco
-            if(bombs.includes(i) == false){
-                this.classList.add('square-blue');
-                points ++;
-                
-                document.getElementById('score').innerText = 'Il tuo punteggio è :' + points;
-            }
-
-            // La casella contiene la bomba quindi il gioco termina
-            else{
-                this.classList.add('bg-danger');
+            // Punto 13 readme.md
+            if(gameOver == false){
+                // Punto 11 readme.md
+                // La casella non contiene la bomba quindi continuo il gioco
+                if(bombs.includes(i) == false){
+                    this.classList.add('square-blue');
+                    points ++;
+                    
+                    // Punto 12 readme.md
+                    document.getElementById('score').innerText = 'Il tuo punteggio è: ' + points;
+                }
+    
+                // La casella contiene la bomba quindi il gioco termina
+                else{
+                    this.classList.add('bg-danger');
+                    gameOver = true;
+                    alert('Hai perso!')
+                }
             }
         })        
         
