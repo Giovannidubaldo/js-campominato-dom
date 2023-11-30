@@ -63,6 +63,9 @@ function createGrid(){
     let column;
     let row;
 
+    // Dichiaro la variabile per determinare il punteggio
+    let points = 0;
+
     // Determino il numero di bombe presenti all'interno del gioco
     const NUMBER_OF_BOMBS = 16;
 
@@ -98,7 +101,9 @@ function createGrid(){
             // La casella non contiene la bomba quindi continuo il gioco
             if(bombs.includes(i) == false){
                 this.classList.add('square-blue');
-
+                points ++;
+                
+                document.getElementById('score').innerText = 'Il tuo punteggio è :' + points;
             }
 
             // La casella contiene la bomba quindi il gioco termina
